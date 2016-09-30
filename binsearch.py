@@ -3,9 +3,15 @@ def binary_search(da_array: list, needle, left:int=0, right:int=-1) -> int:
     An algorithm that operates in O(lg(n)) to search for an element
     in an array sorted in ascending order.
     
-    Alert: But if this array contains missing value, or it is not incrementall
-    sorted, the time complexity can be O(n). So we strongly suggest the user to 
-    make sure the input array is sorted and doesn't contain missing data. 
+    Newly added documentation by Lu Shen, Sep 29, 2016
+    ----------
+    Warning: We strongly suggest the user to avoid the below situations, which
+    will voilate the O(log(n)) time complexity. 
+    (1) It is not incrementally sorted.
+    (2) It contains missing data or non-numeric elements.
+
+    We report an error if the needle is outside the range of da_array.  
+    -----------
     
     Parameters
     ----------
@@ -45,7 +51,7 @@ def binary_search(da_array: list, needle, left:int=0, right:int=-1) -> int:
     5
     >>> binary_search(input, 4.5)
     -1
-    >>> binary_search(input, 10)
+    >>> binary_search(input, 10) #We report an error in this test exercise here, Lu Shen, Sep 29
     -1
     >>> binary_search([5], 5)
     0
