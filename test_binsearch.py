@@ -30,10 +30,10 @@ def test_non_int_elements():
 def test_sorted():#The time complexity is O(n), so I add one warning in the doc
     with raises(TypeError):
         binary_search([4,2,3],2)         
-def test_needle_toolarge():
+def test_needle_toolarge():# In this case, we assume that it returns an error if the needle is too large
     with raises(ValueError):
         binary_search([1,2,3,4],5) 
-def test_needle_toosmall():
+def test_needle_toosmall():# In this case, we assume that it returns an error if the needle is too small
     with raises(ValueError):
         binary_search([1,2,3,4],-2)  
 def test_missing_and_str():#An integration of two errors together    
